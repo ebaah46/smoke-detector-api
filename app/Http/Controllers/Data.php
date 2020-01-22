@@ -21,6 +21,18 @@ class Data extends Controller
         ],200);
     }
 
+    /*
+     * Display based on specific date
+     *
+    */
+
+    public function search($date){
+        $per_date = \App\Data::all()->where('created_at','=',"$date%");
+        return response()->json([
+            'success'=>true,
+            'data'=> $per_date
+        ],200);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,6 +49,8 @@ class Data extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
         // Create new data model
