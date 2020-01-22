@@ -4,7 +4,7 @@ use Illuminate\Support\Str;
 
 $var = "CLEARDB_DATABASE_URL";
 $str = getenv($var,false);
-$url = yaml_parse_url($str);
+$url = parse_url($str);
 $host = $url["host"] ?? null;
 $username = $url["user"] ?? null;
 $password = $url["pass"] ?? null;
