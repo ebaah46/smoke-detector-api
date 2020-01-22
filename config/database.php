@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+//$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 //$host = $url["host"] ?? null;
 //$username = $url["user"] ?? null;
 //$password = $url["pass"] ?? null;
@@ -51,7 +51,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => $url,
+            'url' => getenv("CLEARDB_DATABASE_URL"),
 //                env('DATABASE_URL'),
 //            'host' => $host,
 //                env('DB_HOST', '127.0.0.1'),
