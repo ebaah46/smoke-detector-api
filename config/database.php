@@ -3,7 +3,8 @@
 use Illuminate\Support\Str;
 
 $var = "CLEARDB_DATABASE_URL";
-$url = parse_url(getenv($var,false));
+$str = getenv($var,false);
+$url = parse_url($str);
 $host = $url["host"] ?? null;
 $username = $url["user"] ?? null;
 $password = $url["pass"] ?? null;
