@@ -2,13 +2,11 @@
 
 use Illuminate\Support\Str;
 
-$var = "CLEARDB_DATABASE_URL";
-$str = getenv($var,false);
-$url = parse_url($str);
-$host = $url["host"] ?? null;
-$username = $url["user"] ?? null;
-$password = $url["pass"] ?? null;
-$database = substr($url["path"], 1);
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+//$host = $url["host"] ?? null;
+//$username = $url["user"] ?? null;
+//$password = $url["pass"] ?? null;
+//$database = substr($url["path"], 1);
 
 return [
 
@@ -55,14 +53,14 @@ return [
             'driver' => 'mysql',
             'url' => $url,
 //                env('DATABASE_URL'),
-            'host' => $host,
+//            'host' => $host,
 //                env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => $database,
+//            'port' => env('DB_PORT', '3306'),
+//            'database' => $database,
 //                env('DB_DATABASE', 'forge'),
-            'username' => $username,
+//            'username' => $username,
 //                env('DB_USERNAME', 'forge'),
-            'password' =>$password,
+//            'password' =>$password,
 //                env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
