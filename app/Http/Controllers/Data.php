@@ -27,7 +27,7 @@ class Data extends Controller
     */
 
     public function search($date){
-        $per_date = \App\Data::all()->where('created_at','=',"$date%");
+        $per_date = \App\Data::all()->whereDate('created_at',$date);
         return response()->json([
             'success'=>true,
             'data'=> $per_date

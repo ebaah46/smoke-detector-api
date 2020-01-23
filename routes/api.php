@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/data','Data@index')->name('data.index');
 Route::post('/data','Data@store')->name('data.create');
+Route::get('/data/date/{date}','Data@search')->name('data.search');
